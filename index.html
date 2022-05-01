@@ -29,6 +29,9 @@
     #area-1:parent{
       background-color: red;
     }
+    #area-2:parent{
+      background-color: blue;
+    }
   </style>
   <!-- FINE CSS-->
 </head>
@@ -44,7 +47,7 @@
 
 <!-- INIZIO JAVASCRIPT -->
 <script>
-    // Le 4 sezioni 
+    // Le 4 sezioni
     const area1 = document.querySelector('#area-1');
     const area2 = document.querySelector('#area-2');
     const area3 = document.querySelector('#area-3');
@@ -52,16 +55,32 @@
     // L'intera area dello schermo
     const mainArea = document.querySelector('#main-area')
 
-    // quanto il mouse passa sopra area-2 (sezione in alto a destra) lo sfondo di mainArea viene sostituito dalla versione animata
+    // Area1
+    area1.addEventListener('mouseenter', event => {
+      mainArea.style.backgroundImage = "url('assets/left-top.gif')";
+    })
+    area1.addEventListener('mouseleave', event => {
+      mainArea.style.backgroundImage = "url('assets/bg.gif')";
+    })
+
+    // Area2
     area2.addEventListener('mouseenter', event => {
       mainArea.style.backgroundImage = "url('assets/right-top.gif')";
     })
-    // quando il mouse lascia area-2, mainarea torna con lo sfondo di default
     area2.addEventListener('mouseleave', event => {
       mainArea.style.backgroundImage = "url('assets/bg.gif')";
     })
-    
-    // stessa cosa succede per area-4
+
+    // Area3
+    area3.addEventListener('mouseenter', event => {
+      mainArea.style.backgroundImage = "url('assets/left-bottom.gif')";
+    })
+
+    area3.addEventListener('mouseleave', event => {
+      mainArea.style.backgroundImage = "url('assets/bg.gif')";
+    })
+
+    // Area4
     area4.addEventListener('mouseenter', event => {
       mainArea.style.backgroundImage = "url('assets/right-bottom.gif')";
     })
